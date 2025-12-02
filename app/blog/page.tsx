@@ -30,6 +30,18 @@ export default function BlogPage() {
         </p>
       </div>
 
+      {/* Notion Embed */}
+      <div className="mb-12 overflow-hidden rounded-lg border bg-white dark:bg-slate-900">
+        <iframe
+          src="https://smileyong0915.notion.site/ebd/2bd070e1ff1280898b42cfb2acfb48f2"
+          width="100%"
+          height="600"
+          frameBorder="0"
+          allowFullScreen
+          className="border-0"
+        />
+      </div>
+
       {/* Articles Grid */}
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 pb-12">
         {blogPosts.map((post) => (
