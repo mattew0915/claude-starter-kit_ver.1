@@ -14,8 +14,8 @@ export function FeatureGrid({ title, features }: FeatureGridProps) {
 
       {/* 피처 그리드 */}
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {features.map((feature, index) => (
-          <Card key={index} className="transition-all hover:shadow-md">
+        {features.map((feature) => (
+          <Card key={feature.title} className="transition-all hover:shadow-md">
             <CardHeader>
               {/* 아이콘 */}
               <div className="mb-4 inline-block rounded-lg bg-primary/10 p-3">

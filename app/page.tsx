@@ -31,7 +31,7 @@ export default function Home() {
         subtitle="Next.js + TypeScript + Tailwind CSS + shadcn/ui로 빠르게 웹 개발을 시작하세요."
         buttons={[
           { label: 'Get Started', href: '/blog', variant: 'default' },
-          { label: 'Learn More', href: '#', variant: 'outline' },
+          { label: 'Learn More', href: '/about', variant: 'outline' },
         ]}
       />
 

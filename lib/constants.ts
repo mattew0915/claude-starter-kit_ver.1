@@ -9,29 +9,15 @@ export const SITE_DESCRIPTION =
 export const NAVIGATION_ITEMS: NavItem[] = [
   { title: 'Home', href: '/' },
   { title: 'Blog', href: '/blog' },
-  { title: 'About', href: '#' },
-  { title: 'Contact', href: '#' },
+  { title: 'lv별', href: '/about' },
 ]
 
 // 푸터 링크
 export const FOOTER_LINKS: Record<string, NavItem[]> = {
-  Product: [
-    { title: 'Features', href: '#' },
-    { title: 'Pricing', href: '#' },
-    { title: 'Security', href: '#' },
-    { title: 'Team', href: '#' },
-  ],
-  Company: [
-    { title: 'About', href: '#' },
+  Pages: [
+    { title: 'Home', href: '/' },
     { title: 'Blog', href: '/blog' },
-    { title: 'Careers', href: '#' },
-    { title: 'Press', href: '#' },
-  ],
-  Resources: [
-    { title: 'Documentation', href: '#' },
-    { title: 'Community', href: '#' },
-    { title: 'Help Center', href: '#' },
-    { title: 'Contact', href: '#' },
+    { title: 'lv별', href: '/about' },
   ],
 }
 

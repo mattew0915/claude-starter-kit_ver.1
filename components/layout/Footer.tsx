@@ -21,8 +21,8 @@ export function Footer({
             <div key={category}>
               <h3 className="mb-4 font-semibold">{category}</h3>
               <ul className="space-y-2">
-                {items.map((item) => (
-                  <li key={item.href}>
+                {items.map((item, idx) => (
+                  <li key={`${category}-${idx}`}>
                     <Link
                       href={item.href}
                       className="text-sm text-muted-foreground transition-colors hover:text-primary"

@@ -24,11 +24,11 @@ export function HeroSection({ title, subtitle, buttons }: HeroSectionProps) {
       {/* CTA 버튼 */}
       {buttons && buttons.length > 0 && (
         <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
-          {buttons.map((button, index) => (
-            <Link key={index} href={button.href}>
+          {buttons.map((button) => (
+            <Link key={button.label} href={button.href}>
               <Button
                 size="lg"
-                variant={button.variant || (index === 0 ? 'default' : 'outline')}
+                variant={button.variant || 'outline'}
               >
                 {button.label}
               </Button>
@@ -36,6 +36,16 @@ export function HeroSection({ title, subtitle, buttons }: HeroSectionProps) {
           ))}
         </div>
       )}
+
+      {/* 철학 메시지 */}
+      <div className="mt-16 space-y-4 text-center">
+        <div className="text-2xl font-bold md:text-3xl">
+          explore → plan → code → commit
+        </div>
+        <div className="text-xl font-semibold text-muted-foreground md:text-2xl">
+          Do not reinvent the wheel
+        </div>
+      </div>
     </section>
   )
 }
