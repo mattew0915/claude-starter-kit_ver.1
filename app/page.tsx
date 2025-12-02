@@ -1,65 +1,86 @@
-import Image from "next/image";
+import { Zap, Code2, Palette } from 'lucide-react'
+import { MainLayout } from '@/components/layout/MainLayout'
+import { HeroSection } from '@/components/content/HeroSection'
+import { FeatureGrid } from '@/components/content/FeatureGrid'
+import type { Feature } from '@/types'
+
+const features: Feature[] = [
+  {
+    icon: <Code2 className="h-6 w-6 text-primary" />,
+    title: 'TypeScript 완벽 지원',
+    description: '완벽한 타입 안정성으로 안전한 개발을 경험하세요.',
+  },
+  {
+    icon: <Palette className="h-6 w-6 text-primary" />,
+    title: 'Tailwind CSS + shadcn/ui',
+    description: '아름다운 UI를 빠르게 구성할 수 있는 컴포넌트 라이브러리.',
+  },
+  {
+    icon: <Zap className="h-6 w-6 text-primary" />,
+    title: '성능 최적화',
+    description: 'Next.js의 최신 기능으로 빠른 성능을 보장합니다.',
+  },
+]
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <MainLayout>
+      {/* Hero Section */}
+      <HeroSection
+        title="Modern Starter Kit"
+        subtitle="Next.js + TypeScript + Tailwind CSS + shadcn/ui로 빠르게 웹 개발을 시작하세요."
+        buttons={[
+          { label: 'Get Started', href: '/blog', variant: 'default' },
+          { label: 'Learn More', href: '#', variant: 'outline' },
+        ]}
+      />
+
+      {/* Features Section */}
+      <FeatureGrid
+        title="핵심 기능"
+        features={features}
+      />
+
+      {/* Additional Info Section */}
+      <section className="space-y-8 py-12">
+        <div className="space-y-4 text-center">
+          <h2 className="text-3xl font-bold">즉시 시작할 수 있습니다</h2>
+          <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
+            이 스타터킷에는 모든 웹사이트에서 필요한 필수 컴포넌트와 레이아웃이 포함되어 있습니다.
+            프로덕션 레벨의 코드를 바탕으로 당신의 프로젝트를 시작하세요.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+        <div className="grid gap-6 sm:grid-cols-2">
+          <div className="space-y-2 rounded-lg border bg-card p-6">
+            <h3 className="font-semibold">컴포넌트 시스템</h3>
+            <p className="text-sm text-muted-foreground">
+              재사용 가능한 UI 컴포넌트로 빠르게 페이지를 구성할 수 있습니다.
+            </p>
+          </div>
+
+          <div className="space-y-2 rounded-lg border bg-card p-6">
+            <h3 className="font-semibold">다크모드 지원</h3>
+            <p className="text-sm text-muted-foreground">
+              next-themes로 완벽한 다크모드를 즉시 사용할 수 있습니다.
+            </p>
+          </div>
+
+          <div className="space-y-2 rounded-lg border bg-card p-6">
+            <h3 className="font-semibold">반응형 디자인</h3>
+            <p className="text-sm text-muted-foreground">
+              모바일부터 데스크톱까지 모든 기기에 최적화된 디자인입니다.
+            </p>
+          </div>
+
+          <div className="space-y-2 rounded-lg border bg-card p-6">
+            <h3 className="font-semibold">블로그 시스템</h3>
+            <p className="text-sm text-muted-foreground">
+              샘플 블로그 시스템으로 콘텐츠 관리를 시작하세요.
+            </p>
+          </div>
         </div>
-      </main>
-    </div>
-  );
+      </section>
+    </MainLayout>
+  )
 }
